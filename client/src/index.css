@@ -4,3 +4,8 @@
 *{
     font-family: "Outfit", sans-serif;
 }
+
+.placeholder-color{
+    columns: white;
+    font-weight: 500;
+}
