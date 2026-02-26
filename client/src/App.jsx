@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import Result from './pages/Result'
 import BuyCredit from './pages/BuyCredit'
 import NavBar from './components/NavBar'
+import 'animate.css';
+
 
 const App = () => {
   return (
