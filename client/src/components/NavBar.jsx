@@ -5,7 +5,7 @@ import { AppContext } from '../context/AppContext'
 
 const NavBar = () => {
 
-    const {user, setUser} = useContext(AppContext)
+    const {user, setUser, setShowLogin} = useContext(AppContext)
     const navigate = useNavigate()
 
   return (
@@ -36,7 +36,7 @@ const NavBar = () => {
               :
               <div className='flex items-center gap-2 sm:gap-5'>
                 <p onClick={() => navigate('/buy')} className='cursor-pointer'>Pricing</p>
-                <button className='bg-black text-white px-10 py-2.5 rounded-3xl cursor-pointer sm:py-2'>Login</button>
+                <button onClick={() => setShowLogin(true)} className='bg-black text-white px-10 py-2.5 rounded-3xl cursor-pointer sm:py-2'>Login</button>
               </div>
             }
             
