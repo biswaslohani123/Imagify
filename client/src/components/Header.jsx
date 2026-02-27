@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { assets } from "../assets/assets";
 import { motion } from "framer-motion";
+import { AppContext } from "../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+
+    const {user, setShowLogin} = useContext(AppContext);
+    const navigate = useNavigate()
+
+    const onClickHandler = () => {
+      if (user) {
+        navigate('/result')
+      }else{
+        setShowLogin(true)
+      }
+    }
+
   return (
     <div className="flex flex-col justify-center items-center text-center my-20">
       <div className="text-white inline-flex text-center gap-2 bg-black px-6 py-1 rounded-full border border-neutral-500 transition-all duration-300 ease-out hover:scale-105 hover:border-white">
@@ -22,7 +36,7 @@ const Header = () => {
         Unleash your creativity with AI. Turn your imagination into visual art in seconds - just type, and watch the magic happen.
       </p>
 
-      <button className="sm:text-lg text-white bg-black px-7 py-3 flex justify-center items-center gap-2 rounded-4xl mt-6 cursor-pointer">
+      <button onClick={onClickHandler} className="sm:text-lg text-white bg-black px-7 py-3 flex justify-center items-center gap-2 rounded-4xl mt-6 cursor-pointer">
         Generate Images <img className="w-5 h-5" src={assets.star_group} alt="" />
       </button>
 

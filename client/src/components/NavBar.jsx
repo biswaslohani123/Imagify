@@ -3,6 +3,7 @@ import { assets } from '../assets/assets'
 import { Link, useNavigate } from 'react-router-dom'
 import { AppContext } from '../context/AppContext'
 
+
 const NavBar = () => {
 
     const {user, setUser, setShowLogin} = useContext(AppContext)
