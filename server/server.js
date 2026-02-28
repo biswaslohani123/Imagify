@@ -3,6 +3,8 @@ import cors from 'cors'
 import 'dotenv/config'
 import connectDB from './config/db.js'
 import userRouter from './routes/userRouter.js'
+import imageRouter from './routes/imageRoutes.js'
+
 
 
 const app = express()
@@ -22,6 +24,7 @@ app.get('/', (req, res) => {
 // APi
 
 app.use('/api/user', userRouter);
+app.use('/api/image', imageRouter);
 
 
 app.listen(PORT, () => {
