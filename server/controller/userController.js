@@ -29,7 +29,7 @@ const registerUser = async (req, res) => {
 
         const token = jwt.sign({id: user._id}, process.env.JWT_SECRET)
 
-        res.json({success: true, message: token, user:{name: user.name}})
+        res.json({success: true, message: token, })
 
     } catch (error) {
         console.log(error);
@@ -43,11 +43,7 @@ const loginUser = async (req, res) => {
 
         const {email, password} = req.body;
 
-        if (!email || !password) {
-            
-            return res.json({success: false, message: "Missing Fields"})
-            
-        }
+        
 
         const user = await userModel.findOne({email})
 
