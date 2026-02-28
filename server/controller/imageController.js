@@ -17,7 +17,7 @@ const generateImage = async(req, res) => {
             
         }
 
-        if (user.creditBalance === 0 || userModel.creditBalance < 0) {
+        if (!user.creditBalance === 0 || userModel.creditBalance < 0) {
 
             return res.json({success: false, message: 'No Credit Balance', creditBalance: user.creditBalance})
             
@@ -30,6 +30,7 @@ const generateImage = async(req, res) => {
 
              headers: {
                  'x-api-key': process.env.CLIPDROP_API,
+                  ...formData.getHeaders()
                 },
                 responseType: 'arraybuffer'   
         })

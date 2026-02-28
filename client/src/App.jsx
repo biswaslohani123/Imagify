@@ -8,6 +8,8 @@ import 'animate.css';
 import Footer from './components/Footer'
 import Login from './components/Login'
 import { AppContext } from './context/AppContext'
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 const App = () => {
@@ -16,6 +18,7 @@ const App = () => {
 
   return (
     <div className='px-4 sm:px-10 md:px-14 lg:px-28 min-h-screen bg-gradient-to-b from-purple-50 to-orange-100'>
+      <ToastContainer/>
       <NavBar/>
       {
         showLogin && <Login/>
